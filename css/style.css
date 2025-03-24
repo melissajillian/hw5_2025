@@ -162,15 +162,6 @@ header{
         justify-content: space-between;
     }
 
-    /* whenever I did print preview, the colors weren't there anymore, so I copy and pasted this from above to try and fix this. It still did not work */
-    .card > header{
-        background: #288088; /* background color is hex code #288088 */
-        border: solid 2px #45ADAD; /* border has to be solid, 2 pixels, with the hex code #45ADAD */
-        padding: 20px 0 20px 0; /* padding has to be 20px on the top and bottom */
-        border-top-left-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top left corner */
-        border-top-right-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top right corner */
-    }
-
     /* step 20: No part of the gallery should be visible. */
     .gallery{
         display: none; /* makes it so gallery is not seen */
