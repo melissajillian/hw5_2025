@@ -1,14 +1,14 @@
  /* Melissa Walters Collins 3/23/2025 Flexbox */
 
 /* step #1 */
-#logo{
-    animation-name: logoanime; /* The logos name */
-    animation-duration: 5s;  /* The logo has a duration of 5 seconds - got this from w3schools */
-}
-
 @keyframes logoanime {  /* using keyframes and the animation name to animate it - got this from w3schools */
     0%   {width: 25px; opacity: 0;}  /* start with a width or 25px and opacity of 0 */
     100% {width: 475px; opacity: 1;}  /* end with a width of 475px and opacity of 1 */
+}
+
+#logo{
+    animation-name: logoanime; /* The logos name */
+    animation-duration: 5s;  /* The logo has a duration of 5 seconds - got this from w3schools */
 }
 
 /* step #2 */
