@@ -23,7 +23,7 @@ header{
     display: flex; /* using flex */
     flex-direction: column; /* needs to be column based */
     align-items: center; /* The organization is centered */
-    flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+    flex-wrap: nowrap; /* I do not want the items to wrap onto the next line */
 }
 
 /* step #4: Edit the nav_links class */
@@ -31,22 +31,22 @@ header{
     display: flex; /* using flex */
     flex-direction: column; /* column based */
     align-items: center; /* vertically centers */
-    flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+    flex-wrap: nowrap; /* I do not want the items to wrap onto the next line */
 }
 
 /* step #5 */
 .nav_links a:link, .nav_links a:visited { /* This ensures that the links will be the same after they are visited */
   color: #0400ff; /* color (tried to match the color of the screenshot as close as possible) */
-  text-decoration: underline; /* ensures there is an underline */
+  text-decoration: underline; /* ensures there is an underline like the screenshot */
 }
 
 /* step #7 */
 .card{
     flex-basis: 450px; /* specifies an initial size of 450px */
     flex-direction: column;
-    border-top-left-radius: 50px; /* had to include this because of the white background behind the cards - it wasn't curving along with the teal card header from above */
+    border-top-left-radius: 50px; /* had to include this because of the white background behind the cards - it wasn't curving along with the teal card header */
     border-top-right-radius: 50px; /* same as above line */
-    flex-wrap: nowrap; /* I doo not the items to wrap onto the next line */
+    flex-wrap: nowrap; /* I do not want the items to wrap onto the next line */
 }
 
 /* step #6: I used the child selector to style only the header elements that are direct children of the card class. */
@@ -119,7 +119,7 @@ header{
     }
 
     /* step 14
-    The logo should appear but not be animated if prefers-reduced-motion is selected. I did some research and found this appraoch through developer.mozilla.org */
+    The logo should appear but not be animated if prefers-reduced-motion is selected. I did some research and found this approach through developer.mozilla.org */
     @media (prefers-reduced-motion) {
         #logo {
           animation: none; /* Disables the animation */
@@ -144,13 +144,13 @@ header{
         display: flex;
         flex-direction: row;
         justify-content: space-around;  /* Distribute space evenly between items */
-        flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+        flex-wrap: nowrap; /* I do not want the items to wrap onto the next line */
     }
 
     /* step 18: styling the pricing class */
     .pricing {
         display: flex;
-        flex-flow: nowrap; /* I do not the items to wrap onto the next line */
+        flex-flow: nowrap; /* I do not want the items to wrap onto the next line */
         align-items: flex-end; /* align items vertically since the flex direction is row  */
         justify-content: center; /* centered horizontally since the direction is set to row */
     }
