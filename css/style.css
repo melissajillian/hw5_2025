@@ -1,0 +1,188 @@
+ /* Melissa Walters Collins 3/23/2025 Flexbox */
+
+/* step #1 */
+#logo{
+    animation-name: logoanime; /* The logos name */
+    animation-duration: 5s ease forwards;  /* The logo has a duration of 5 seconds - got this from w3schools */
+}
+
+@keyframes logoanime {  /* using keyframes and the animation name to animate it - got this from w3schools */
+    0%   {width: 25px; opacity: 0;}  /* start with a width or 25px and opacity of 0 */
+    100% {width: 475px; opacity: 1;}  /* end with a width of 475px and opacity of 1 */
+}
+
+/* step #2 */
+body{
+    font-family: "Poppins", serif;  /* Poppins font with serif backup */
+    background-image: url("../images/concrete_seamless.png");  /* concrete_seamless.png image as the background */
+    background-color: #f1f1f1;  /* backup color of #f1f1f1 */
+}
+
+/* step #3 */
+header{
+    display: flex; /* using flex */
+    flex-direction: column; /* needs to be column based */
+    align-items: center; /* The organization is centered */
+    flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+}
+
+/* step #4: Edit the nav_links class */
+.nav_links{
+    display: flex; /* using flex */
+    flex-direction: column; /* column based */
+    align-items: center; /* vertically centers */
+    flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+}
+
+/* step #5 */
+.nav_links a:link, .nav_links a:visited { /* This ensures that the links will be the same after they are visited */
+  color: #0400ff; /* color (tried to match the color of the screenshot as close as possible) */
+  text-decoration: underline; /* ensures there is an underline */
+}
+
+/* step #7 */
+.card{
+    flex-basis: 450px; /* specifies an initial size of 450px */
+    flex-direction: column;
+    border-top-left-radius: 50px; /* had to include this because of the white background behind the cards - it wasn't curving along with the teal card header from above */
+    border-top-right-radius: 50px; /* same as above line */
+    flex-wrap: nowrap; /* I doo not the items to wrap onto the next line */
+}
+
+/* step #6: I used the child selector to style only the header elements that are direct children of the card class. */
+.card > header{
+    background: #288088; /* background color is hex code #288088 */
+    border: solid 2px #45ADAD; /* border has to be solid, 2 pixels, with the hex code #45ADAD */
+    padding: 20px 0 20px 0; /* padding has to be 20px on the top and bottom */
+    border-top-left-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top left corner */
+    border-top-right-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top right corner */
+}
+
+/* Step 8: Use flex and the cards should be centered both horizontally and vertically.*/
+.pricing{
+    display: flex;
+    flex-flow: row wrap; /* items are laid out horizontally. This means the items will be arranged in a single row. */
+    justify-content: center; /* centered horizontally since the direction is set to row (the default) */
+    align-items: center; /* centers the items vertically  */
+}
+
+/* Step 9 */
+.gallery img{ /* styling the images in the gallery class */
+    border: solid 10px #50C7C7; /* border that is solid, 10 pixels, and the color #50C7C7 */
+    margin: 10px; /* 10 pixel margin on all four sides */
+    width: 300px; /* width of 300 pixels */
+}
+
+/* step 10 */
+.gallery{ /* styling of the gallery class */
+    display: flex;
+    flex-direction: row; /* the direction is set to the defualt which is row */
+    flex-wrap: wrap; /* items are laid out horizontally. This means the items will be arranged in a single row. */
+    justify-content: center; /* centered horizontally since the direction is set to row */
+    align-items: stretch; /* stretches the items to fill the entire container vertically (by default since the flex-direction is set to row) */
+}
+
+@media screen and (min-width: 901px) { /* when the screen-size is greater than 900px (I set the mid-width to 901px) */
+
+    /* step 11: the header tag for ALL instances. The logo will be as far to the left as possible and the links as far to the right as possible */
+    header{
+        display: flex;
+        flex-direction: row; /* the direction is set to the defualt which is row */
+        justify-content: space-between; /* this places the first flex item at the start of the header container and the last flex item at the end of the header container. */
+        align-items: center; /* centers the items vertically  */
+    }
+
+    /* step 13: first header (the one not inside main) so that it remains visible at the top of the screen (when scrolling) */
+    body > header { /* targets the header element that is the direct child of the body element */
+        position: sticky; /* will remain at the top of the screen even when scrolling */
+        top: 0; /* header will 'stick' to the top of the screen when scrolling */
+        left: 0; /* ensures that the header is aligned to the left side */
+        width: 100%; /* will span the length of the screen */
+    }
+
+    /* styling of the nav_links class to match */
+    .nav_links{
+        display: flex;
+        flex-direction: row; /* the direction is set to the defualt which is row so it displays in the row, matching the screenshot */
+    }
+
+    /* step 12: Styling for the card class */
+    .card {
+        /* flex-direction: column; /* the direction is set to a column */
+        /* align-items: stretch; stretches the items to fill the entire container horizontally */
+        flex-basis: 275px; /* specifies an initial size of 275px (ensures same width as pricing class) */
+    }
+
+    /* Styling the pricing class */
+    .pricing {
+        flex-basis: 275px; /* specifies an initial size of 275px (ensures same width as card class) */
+    }
+
+    /* step 14
+    The logo should appear but not be animated if prefers-reduced-motion is selected. I did some research and found this appraoch through developer.mozilla.org */
+    @media (prefers-reduced-motion) {
+        #logo {
+          animation: none; /* Disables the animation */
+        }
+      }
+}
+
+@media print {
+
+    /* step 15 and 16 */
+    body{
+        font-family: "Arial", Helvetica; /* font of the body is now Arial with a backup of Helvetica */
+        background-image: none; /* The background image is removed. */
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    /* step 17 */
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;  /* Distribute space evenly between items */
+        flex-wrap: nowrap; /* I do not the items to wrap onto the next line */
+    }
+
+    /* step 18: styling the pricing class */
+    .pricing {
+        display: flex;
+        flex-flow: nowrap; /* I do not the items to wrap onto the next line */
+        align-items: flex-end; /* align items vertically since the flex direction is row  */
+        justify-content: center; /* centered horizontally since the direction is set to row */
+    }
+
+    /* step 19 */
+    .card {
+        border: solid 2px #45ADDD; /* border is solid, 2 pixels, and the color #45ADDD */
+        flex-basis: 325px; /* specifies an initial size of 325px */
+        justify-content: space-between;
+    }
+
+    /* whenever I did print preview, the colors weren't there anymore, so I copy and pasted this from above to try and fix this. It still did not work */
+    .card > header{
+        background: #288088; /* background color is hex code #288088 */
+        border: solid 2px #45ADAD; /* border has to be solid, 2 pixels, with the hex code #45ADAD */
+        padding: 20px 0 20px 0; /* padding has to be 20px on the top and bottom */
+        border-top-left-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top left corner */
+        border-top-right-radius: 50px; /* the border radus, curved, has to be 50 pixels on the top right corner */
+    }
+
+    /* step 20: No part of the gallery should be visible. */
+    .gallery{
+        display: none; /* makes it so gallery is not seen */
+    }
+
+    h2#gallery{
+        display: none; /* makes it so the gallery header is not seen either */
+    }
+
+    /* step 21 */
+    .card ul li:nth-child(2)::after { /* targets the card class, then the second list item (li) within the unordered list (ul). The '::after' pseudo-element is used to insert the content (thumbs up) after the second list item. */
+        content: "👍🏼"; /* the content will be a thumbs up emoji (copy and pasted from emoji list) */
+    }
+
+}
