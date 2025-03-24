@@ -3,7 +3,7 @@
 /* step #1 */
 #logo{
     animation-name: logoanime; /* The logos name */
-    animation-duration: 5s ease forwards;  /* The logo has a duration of 5 seconds - got this from w3schools */
+    animation-duration: 5s;  /* The logo has a duration of 5 seconds - got this from w3schools */
 }
 
 @keyframes logoanime {  /* using keyframes and the animation name to animate it - got this from w3schools */
